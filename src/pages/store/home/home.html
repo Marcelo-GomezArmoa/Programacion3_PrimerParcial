@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Store | Catalogo</title>
+  <link rel="stylesheet" href="../store.css" />
+</head>
+
+<body>
+  <div class="store-shell">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Food Store</h1>
+        <p>Catalogo dinamico de productos</p>
+      </div>
+      <nav class="nav-links">
+        <a class="pill-link" href="../../client/home/home.html">Inicio cliente</a>
+        <a class="pill-link" href="../cart/cart.html">Carrito (<span id="cartCount">0</span>)</a>
+      </nav>
+    </header>
+
+    <div class="layout">
+      <aside class="panel">
+        <div class="search-control">
+          <label for="searchInput">Buscar por nombre</label>
+          <input id="searchInput" type="text" placeholder="Ej: pizza, burger..." autocomplete="off" />
+        </div>
+        <ul class="category-list" id="categoryList"></ul>
+        <p id="feedback" class="toast" aria-live="polite"></p>
+      </aside>
+
+      <main class="panel">
+        <p id="resultInfo" class="info-text"></p>
+        <section class="product-grid" id="productList"></section>
+        <div class="empty-box" id="emptyState" hidden>
+          No se encontraron productos para la busqueda o categoria seleccionada.
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="./home.ts"></script>
+</body>
+
+</html>

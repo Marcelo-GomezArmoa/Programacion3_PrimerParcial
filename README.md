@@ -81,3 +81,63 @@ El mecanismo es simple y se gestiona desde el código TypeScript en la carpeta `
 ├── package.json              # Dependencias y scripts
 └── README.md                 # Este archivo
 ```
+
+---
+
+##  Parcial: Food Store
+
+Se agrego un modulo de tienda frontend dinamica respetando la estructura pedida en la consigna.
+
+### Funcionalidades implementadas
+
+- Catalogo dinamico de productos
+- Busqueda por nombre en tiempo real
+- Filtro por categoria
+- Carrito con persistencia en `localStorage`
+- Vista de carrito con nombre, precio, cantidad y subtotal por item
+- Calculo del total general del carrito
+
+### Estructura agregada
+
+```text
+src/
+├── pages/
+│   └── store/
+│       ├── home/
+│       │   ├── home.html
+│       │   └── home.ts
+│       ├── cart/
+│       │   ├── cart.html
+│       │   └── cart.ts
+│       └── store.css
+├── types/
+│   ├── product.ts
+│   └── categoria.ts
+├── data/
+│   └── data.ts
+└── utils/
+    └── cart.ts
+```
+
+### Navegacion
+
+- Login con rol `client`
+- Home cliente: enlace a catalogo
+- Catalogo: enlace a carrito
+
+### Ejecutar
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Para build de produccion:
+
+```bash
+pnpm build
+```
+
+### Nota
+
+Las paginas de tienda fueron registradas en `vite.config.ts` dentro de `build.rollupOptions.input` para que se incluyan correctamente en el build.
