@@ -26,6 +26,10 @@ export const writeCart = (items: CartItem[]): void => {
   localStorage.setItem(CART_KEY, JSON.stringify(items));
 };
 
+export const clearCart = (): void => {
+  writeCart([]);
+};
+
 export const addToCart = (product: Product): CartItem[] => {
   const cart = readCart();
   const existingItem = cart.find((item) => item.productId === product.id);
